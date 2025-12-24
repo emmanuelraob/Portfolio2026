@@ -1,19 +1,24 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 const Hero = () => {
-  const {
-    scrollY
-  } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], [0, 400]);
-  const opacity = useTransform(scrollY, [0, 500], [1, 0]);
+  const heroImage = '/images/ProfilePicture.png';
   return <section className="relative min-h-screen flex flex-col justify-end pb-12 px-6 lg:px-12 overflow-hidden bg-black">
-      {/* Abstract Background Element - User Image Integration */}
-      <motion.div style={{
-      y,
-      opacity: 0.2
-    }} className="absolute inset-0 z-0 pointer-events-none">
-         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
-         <img className="w-full h-full object-cover grayscale mix-blend-screen opacity-50" alt="Emmanuel portrait" src="https://images.unsplash.com/photo-1581384892536-392dfd6fe94d" />
+      {/* Right-side hero image with fade */}
+      <motion.div
+        initial={{ opacity: 0, y: 80, scale: 0.9 }}
+        animate={{ opacity: 0.9, y: 0, scale: 1 }}
+        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute right-0 top-0 h-full w-full md:w-1/2 lg:w-2/5 pointer-events-none z-0 flex items-center justify-center"
+      >
+        <div className="relative h-[70%] w-[70%] md:h-[75%] md:w-[75%] lg:h-[70%] lg:w-[70%] max-w-xl">
+          <img
+            src={heroImage}
+            alt="Featured work"
+            className="h-full w-full object-cover object-center opacity-80"
+            draggable="false"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+        </div>
       </motion.div>
 
       <div className="max-w-[90vw] z-10 relative">
@@ -28,7 +33,7 @@ const Hero = () => {
         ease: [0.16, 1, 0.3, 1]
       }}>
           <h1 className="text-[9vw] md:text-[11vw] leading-[0.9] font-bold tracking-tighter text-white mix-blend-normal">
-             Hi, I'm <br /> Emmanuel
+            Hi, I'm <br /> Emmanuel
           </h1>
         </motion.div>
         

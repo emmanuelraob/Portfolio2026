@@ -8,7 +8,7 @@ const Contact = () => {
   const { toast } = useToast();
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('hello@portfolio.dev');
+    navigator.clipboard.writeText('info@emmanueldesign.com');
     toast({
       title: "Copied to clipboard",
       description: "Ready to paste!",
@@ -37,10 +37,13 @@ const Contact = () => {
             className="group text-left"
           >
             <span className="block text-[8vw] leading-none font-bold text-white group-hover:text-zinc-400 transition-colors duration-500">
-              HELLO@
+              INFO@
             </span>
             <span className="block text-[8vw] leading-none font-bold text-zinc-600 group-hover:text-white transition-colors duration-500">
-              PORTFOLIO.DEV
+              EMMANUELDESIGN
+            </span>
+            <span className="block text-[8vw] leading-none font-bold text-white group-hover:text-zinc-400 transition-colors duration-500">
+              .COM
             </span>
           </button>
         </motion.div>
@@ -50,21 +53,20 @@ const Contact = () => {
         <div>
           <h3 className="text-xs text-zinc-500 uppercase tracking-widest mb-4">Social</h3>
           <ul className="space-y-2 text-sm text-white">
-            <li><a href="#" className="hover:text-zinc-400 transition-colors">Twitter / X</a></li>
-            <li><a href="#" className="hover:text-zinc-400 transition-colors">LinkedIn</a></li>
-            <li><a href="#" className="hover:text-zinc-400 transition-colors">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/emmanuel-ram%C3%ADrez-design/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">LinkedIn</a></li>
+            <li><a href="https://github.com/emmanuelraob" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">GitHub</a></li>
+            <li><a href="https://www.behance.net/emmanueramirez5" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">Behance</a></li>
           </ul>
         </div>
         <div>
           <h3 className="text-xs text-zinc-500 uppercase tracking-widest mb-4">Code</h3>
           <ul className="space-y-2 text-sm text-white">
-            <li><a href="#" className="hover:text-zinc-400 transition-colors">GitHub</a></li>
-            <li><a href="#" className="hover:text-zinc-400 transition-colors">CodePen</a></li>
+            <li><a href="https://github.com/emmanuelraob" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">GitHub</a></li>
           </ul>
         </div>
         <div className="col-span-2 md:text-right flex flex-col justify-end">
           <p className="text-xs text-zinc-600 uppercase tracking-widest">
-            © 2024 — Portfolio
+            © 2026 — Portfolio
           </p>
         </div>
       </div>

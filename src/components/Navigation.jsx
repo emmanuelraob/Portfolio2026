@@ -16,9 +16,9 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Index', href: '/#work' },
     { name: 'Profile', href: '/#about' },
     { name: 'Expertise', href: '/#skills' },
+    { name: 'Work', href: '/#work' },
     { name: 'Insights', href: '/#research' },
   ];
 
@@ -47,7 +47,7 @@ const Navigation = () => {
       >
         <div className="w-full px-6 lg:px-12 py-8 flex justify-between items-baseline">
           <Link to="/" className="text-sm font-bold tracking-widest uppercase hover:opacity-70 transition-opacity">
-            Emmanuel (2025)
+            Emmanuel (2026)
           </Link>
 
           {/* Desktop Navigation */}

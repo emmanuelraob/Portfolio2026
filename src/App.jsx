@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <Helmet>
-        <title>Emmanuel - Portfolio 2025</title>
+        <title>EmmanuelDesign</title>
         <meta name="description" content="Portfolio of Emmanuel, a multidisciplinary UX/UI designer and developer." />
       </Helmet>
       <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
