@@ -8,6 +8,7 @@ import Contact from '@/components/Contact';
 const ProjectDetail = () => {
   const { slug } = useParams();
   const project = projectsData.find(p => p.slug === slug);
+  const processImages = [project?.imageProcess1, project?.imageProcess2].filter(Boolean);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -94,14 +95,19 @@ const ProjectDetail = () => {
             <p className="text-lg md:text-xl text-zinc-300 leading-relaxed font-light mb-12">
               {project.process}
             </p>
-            <div className="grid grid-cols-2 gap-4">
-               <div className="bg-zinc-900 aspect-square">
-                 <img alt="Process image 1" className="w-full h-full object-cover opacity-50" src={project.imageProcess1} />
-               </div>
-               <div className="bg-zinc-900 aspect-square">
-                 <img alt="Process image 2" className="w-full h-full object-cover opacity-50" src={project.imageProcess2} />
-               </div>
-            </div>
+            {processImages.length > 0 && (
+              <div className="grid grid-cols-2 gap-4">
+                {processImages.map((src, idx) => (
+                  <div key={src} className="bg-zinc-900 aspect-square">
+                    <img
+                      alt={`Process image ${idx + 1}`}
+                      className="w-full h-full object-cover opacity-50"
+                      src={src}
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
