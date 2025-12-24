@@ -43,7 +43,7 @@ const Hero = () => {
           <p className="max-w-md text-sm md:text-base leading-relaxed text-zinc-400 font-light">Product Designer, UX Researcher & Developer crafting digital ecosystems at the intersection of aesthetics and functionality.</p>
           <div className="mt-8 md:mt-0 text-right">
             <span className="block text-xs uppercase tracking-[0.2em] text-zinc-500 mb-1">Available For</span>
-            <span className="block text-sm text-white">Freelance & Collaboration</span>
+            <span className="block text-sm text-white">Freelance, Strategic Partnerships & New Ventures</span>
           </div>
         </motion.div>
       </div>

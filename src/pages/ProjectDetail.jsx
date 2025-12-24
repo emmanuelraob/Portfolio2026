@@ -37,6 +37,17 @@ const ProjectDetail = () => {
               <p className="text-xl md:text-2xl text-zinc-400 font-light leading-relaxed max-w-3xl">
                 {project.fullDescription}
               </p>
+              {project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-6 px-5 py-2 border border-white/20 bg-zinc-900 hover:bg-white hover:text-black text-white font-medium rounded-full transition-colors duration-200 shadow-sm text-base group"
+                >
+                  <span>Test Demo</span>
+                  <ArrowUpRight size={18} className="group-hover:text-black transition-colors duration-200" />
+                </a>
+              )}
             </div>
             
             <div className="lg:col-span-4 space-y-8 lg:pt-4">
@@ -69,7 +80,7 @@ const ProjectDetail = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="w-full aspect-video bg-zinc-900 mb-24 overflow-hidden rounded-sm"
         >
-          <img alt={project.imageAlt} className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+          <img alt={project.imageAlt} className="w-full h-full object-cover" src={project.imageUrl} />
         </motion.div>
 
         {/* Process Section */}
@@ -85,10 +96,10 @@ const ProjectDetail = () => {
             </p>
             <div className="grid grid-cols-2 gap-4">
                <div className="bg-zinc-900 aspect-square">
-                 <img alt="Process sketch 1" className="w-full h-full object-cover opacity-50" src="https://images.unsplash.com/photo-1581291519195-ef11498d1cf2" />
+                 <img alt="Process image 1" className="w-full h-full object-cover opacity-50" src={project.imageProcess1} />
                </div>
                <div className="bg-zinc-900 aspect-square">
-                 <img alt="Process sketch 2" className="w-full h-full object-cover opacity-50" src="https://images.unsplash.com/photo-1561406084-7721f5e4d465" />
+                 <img alt="Process image 2" className="w-full h-full object-cover opacity-50" src={project.imageProcess2} />
                </div>
             </div>
           </div>

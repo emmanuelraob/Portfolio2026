@@ -16,7 +16,7 @@ const ProjectCard = ({ project, index, isInView }) => {
         onMouseLeave={() => setIsHovered(false)}
         className="group relative border-b border-white/10 py-8 md:py-12 cursor-pointer transition-colors duration-500 hover:bg-zinc-900/30 block"
       >
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-baseline pointer-events-none">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-4 items-baseline pointer-events-none">
           {/* Number */}
           <div className="md:col-span-1 text-xs font-mono text-zinc-600 group-hover:text-white transition-colors">
             {project.id}
@@ -52,12 +52,21 @@ const ProjectCard = ({ project, index, isInView }) => {
           </div>
         </div>
         
-        {/* Subtle Image Reveal Background */}
-        <div 
-          className={`absolute inset-0 -z-10 pointer-events-none opacity-0 transition-opacity duration-700 ease-in-out ${isHovered ? 'opacity-10' : ''}`}
+        {/* Project Image Reveal on Hover */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={isHovered ? { opacity: 0.9, x: 0 } : { opacity: 0, x: -40 }}
+          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+          className="absolute inset-0 z-0 pointer-events-none rounded-xl overflow-hidden"
         >
-          <div className="w-full h-full bg-white/5 blur-3xl rounded-full translate-x-1/2" />
-        </div>
+          <img
+            src={project.imageUrl}
+            alt={project.imageAlt}
+            className="w-full h-full object-cover object-left transition-all duration-700"
+            draggable="false"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+        </motion.div>
       </motion.div>
     </Link>
   );
