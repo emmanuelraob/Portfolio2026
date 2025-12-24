@@ -14,8 +14,8 @@ export const projectsData = [
       tags: ['Design', 'Dev'],
       imageAlt: "Jade Museum interface on a laptop",
       imageUrl: "/images/jade-museum.avif",
-      imageProcess1: "/images/jade-museum-process1.jpg",
-      imageProcess2: "/images/jade-museum-process2.jpg"
+      //imageProcess1: "/images/jade-museum-process1.jpg",
+      //imageProcess2: "/images/jade-museum-process2.jpg"
     },
     {
       id: "02",
