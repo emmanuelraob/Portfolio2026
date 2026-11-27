@@ -73,8 +73,26 @@ export const projects: Project[] = [
       "How parents decide whom to trust with their children's learning, and how that shaped a two-sided marketplace now in development.",
     mode: "research",
     label: "Human-centered design",
-    facts: [],
-    ready: false,
+    facts: [
+      {
+        label: "Context",
+        value:
+          "Own project, started in a Human-Centered Design course (UCR, 2026), now being built as a real product",
+      },
+      {
+        label: "My role",
+        value:
+          "Product Owner, lead UX Researcher and UI Designer, in a team with another researcher and a designer",
+      },
+      {
+        label: "Methods",
+        value:
+          "In-depth interviews, usability testing (2 iterations), JTBD, affinity mapping, personas, journey maps, value proposition canvases, Lean Canvas",
+      },
+      { label: "Tools", value: "Figma, FigJam, Figma Make" },
+      { label: "Participants", value: "18 interviews with parents and tutors; usability testing with 30 participants" },
+    ],
+    ready: true,
   },
   {
     slug: "emotion-analysis",

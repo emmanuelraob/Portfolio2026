@@ -4,4 +4,5 @@ import type { ComponentType } from "react";
 export const bodies: Record<string, () => Promise<{ default: ComponentType }>> = {
   "developer-platform": () => import("./developer-platform.mdx"),
   "persona-agents": () => import("./persona-agents.mdx"),
+  "2tor": () => import("./2tor.mdx"),
 };
