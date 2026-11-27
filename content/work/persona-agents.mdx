@@ -1,0 +1,39 @@
+import Figure from "../../components/Figure";
+import AgentPipeline from "../../components/diagrams/AgentPipeline";
+import PersonaChat from "../../components/diagrams/PersonaChat";
+
+## Problem
+
+Research was piling up in documents nobody reread. Synthesizing it by hand was slow, and PMs and designers couldn't easily ask what users thought.
+
+## Goal
+
+Remove the manual synthesis work and put the team's user knowledge directly in employees' hands.
+
+## How it works
+
+<Figure tone="night" caption="From raw research to agents anyone can ask. Generic stage names.">
+  <AgentPipeline />
+</Figure>
+
+1. The team uploads research materials (interviews, notes, recordings) to a shared Drive.
+2. Files are classified automatically by product, project and existing persona, based on folder and naming.
+3. AI analyzes each interview and extracts behaviors, quotes and product context.
+4. A summarization step keeps only what matters, so the volume stays manageable.
+5. The output feeds 6 product agents. Each can answer as one of its personas, with that persona's attitudes and preferences.
+6. I review agent responses manually against the real research data to keep them accurate.
+
+## How teams use it
+
+- **PMs** test how users would likely react to new value propositions before development starts.
+- **Designers** run early usability-test simulations on specific interface decisions before involving real users.
+
+<Figure tone="bare" caption="Fictional example. The persona, product and conversation are invented to show the format; none of it is real research data.">
+  <PersonaChat />
+</Figure>
+
+## Impact
+
+Teams reach real user testing with a more mature product. Before, they could spend 1 to 2 quarters on exploratory testing with real people.
+
+In the first months, adoption reached more than half of R&D and about 1 in 5 PMs. These are my own estimates, not official figures.

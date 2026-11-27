@@ -1,7 +1,7 @@
 type Props = {
   children: React.ReactNode;
   caption: string;
-  tone?: "light" | "night";
+  tone?: "light" | "night" | "bare";
   wide?: boolean;
 };
 
@@ -10,13 +10,17 @@ export default function Figure({ children, caption, tone = "light", wide = true 
   const night = tone === "night";
   return (
     <figure className={`reveal my-14 ${wide ? "lg:-mr-[22%]" : ""}`}>
-      <div
-        className={`rounded-sm p-6 md:p-10 ${
-          night ? "night bg-night text-night-ink" : "bg-surface text-ink ring-1 ring-inset ring-line"
-        }`}
-      >
-        {children}
-      </div>
+      {tone === "bare" ? (
+        children
+      ) : (
+        <div
+          className={`rounded-sm p-6 md:p-10 ${
+            night ? "night bg-night text-night-ink" : "bg-surface text-ink ring-1 ring-inset ring-line"
+          }`}
+        >
+          {children}
+        </div>
+      )}
       <figcaption className="mt-3 text-sm text-muted">{caption}</figcaption>
     </figure>
   );

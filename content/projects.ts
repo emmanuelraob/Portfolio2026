@@ -53,8 +53,17 @@ export const projects: Project[] = [
       "An AI platform that turns a team's research into persona agents anyone in the company can ask.",
     mode: "ai",
     label: "AI research platform",
-    facts: [],
-    ready: false,
+    facts: [
+      { label: "Company", value: "Enterprise B2B SaaS company (confidential)" },
+      {
+        label: "My role",
+        value: "UX Researcher and AI developer, end-to-end owner: research, experience design and all code",
+      },
+      { label: "Timeline", value: "2026, in use and still being evaluated" },
+      { label: "Tools", value: "Google Drive, Google Apps Script, Gemini, LLM agents" },
+      { label: "Scale", value: "6 agents, one per product, each with 3 to 15 research-grounded personas" },
+    ],
+    ready: true,
   },
   {
     slug: "2tor",
