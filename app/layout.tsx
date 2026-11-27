@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 const title = `${site.name}, ${site.role}`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(new URL(site.url).origin),
+  metadataBase: new URL(`${site.url.replace(/\/$/, "")}/`),
   title: { default: title, template: `%s | ${site.name}` },
   description: site.description,
   openGraph: {
