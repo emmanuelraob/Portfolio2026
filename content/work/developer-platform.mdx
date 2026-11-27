@@ -1,0 +1,54 @@
+import Figure from "../../components/Figure";
+import ProcessTimeline from "../../components/diagrams/ProcessTimeline";
+import ParticipantMix from "../../components/diagrams/ParticipantMix";
+import EvidenceFunnel from "../../components/diagrams/EvidenceFunnel";
+import WorkflowLine from "../../components/diagrams/WorkflowLine";
+
+## Context
+
+The company offers a developer suite of 4 products: hosting, CI/CD, a cloud IDE and Git-based repository tooling. Leadership had to decide whether to keep investing in all four and, if so, in what.
+
+## Research question
+
+What value does each product deliver in developers' real workflows, what is broken, and where should the next investment go?
+
+## Process
+
+<Figure caption="The 7-step process, from scoping to delivery. The AI step is always followed by a manual check.">
+  <ProcessTimeline />
+</Figure>
+
+1. **Scoping with the PM:** defined segments, user types, recruitment channels, budget, customer availability and feasible methods.
+2. **Study design:** wrote a separate interview script per segment and role.
+3. **Recruitment:** Salesforce and PlaybookUX for customers and external developers, internal channels and email for internal developers.
+4. **Sessions:** 25 interviews of 30 to 60 minutes, depending on the profile.
+5. **Extraction:** built an agentic workflow on Claude that pulled about 1,100 evidence points from the transcripts, tagged by segment and product.
+6. **Validation:** reviewed the extracted evidence manually against the sources before synthesis.
+7. **Synthesis and delivery:** synthesized in a custom tool and delivered 4 formats (deck, insights document, executive summary, AI-readable version).
+
+<Figure caption="Who took part: 25 developers across three segments.">
+  <ParticipantMix />
+</Figure>
+
+<Figure tone="night" caption="From interviews to findings. AI made extraction fast; every evidence point was checked by hand before synthesis.">
+  <EvidenceFunnel />
+</Figure>
+
+## Key findings
+
+<Figure caption="The 4 products, mapped onto one developer workflow. Generic stage names.">
+  <WorkflowLine />
+</Figure>
+
+- **One workflow, not 4 competing products.** Each product sits at a different stage of the same developer workflow.
+- **Hosting is the anchor.** Every team ends up using it, but many only as the final deployment step, copying from another repository even though the product can do more.
+- **A security product nobody used.** The repository security-update tool had an unclear name and a nonstandard interaction model. Notifications were ignored or never arrived, so developers patched by hand.
+- **Unmet demand for security.** Customers wanted a higher tier to run specific security tools in CI/CD. The PMs didn't know about this.
+- **Mandated, not chosen.** Adoption was driven more by corporate decisions than by developer preference.
+- **A small group with no way out.** About 2–3% of users depend entirely on the IDE, so removing it would leave them with no alternative.
+
+## Impact
+
+I presented the results to the PMs and R&D leadership, and they are now part of next year's planning.
+
+Recommendations: keep all 4 products, focus the roadmap on hosting and the IDE, scale back the security-update product without removing it, and explore a security tier.

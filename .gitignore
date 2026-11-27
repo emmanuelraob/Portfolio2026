@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.DS_Store
+.env*
+
+# Private planning docs (name the employer, never publish)
+Portfolio Brief*.md
+Portfolio — Case Study Content.md
+
+# Local-only files: original CV (names the employer), drafts
+/private/

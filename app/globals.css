@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+/*
+  Palette: neutral grays + one accent (deep teal).
+  Light surfaces = research and design. Dark panels = AI and code.
+  Contrast checked for WCAG AA on the surface each color sits on.
+*/
+@theme {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-bg: #f3f3f1;
+  --color-surface: #fafaf9;
+  --color-line: #e0e0dc;
+  --color-ink: #1d1d1f;
+  --color-muted: #5b5b5f;
+  --color-accent: #0e6464;
+  --color-accent-soft: #dcebea;
+
+  --color-night: #18191b;
+  --color-night-2: #232427;
+  --color-night-line: #34363a;
+  --color-night-ink: #ececea;
+  --color-night-muted: #a4a4a8;
+  --color-night-accent: #62c4bc;
+
+  --text-display: clamp(2.25rem, 1.4rem + 3.6vw, 4.25rem);
+  --text-display--line-height: 1.04;
+  --text-display--letter-spacing: -0.025em;
+  --text-title: clamp(2rem, 1.4rem + 2.6vw, 3.5rem);
+  --text-title--line-height: 1.06;
+  --text-title--letter-spacing: -0.022em;
+}
+
+@layer base {
+  html {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .night :focus-visible {
+    outline-color: var(--color-night-accent);
+  }
+}
+
+/* Long-form case study text: ~70 characters per line. */
+.prose-case {
+  max-width: 68ch;
+}
+.prose-case > h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  margin-top: 4.5rem;
+  margin-bottom: 1rem;
+}
+.prose-case > h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.prose-case > p,
+.prose-case > ul,
+.prose-case > ol {
+  margin-bottom: 1.1rem;
+}
+.prose-case > ol {
+  list-style: decimal;
+  padding-left: 1.4rem;
+}
+.prose-case > ul {
+  list-style: none;
+  padding-left: 0;
+}
+.prose-case > ol > li,
+.prose-case > ul > li {
+  margin-bottom: 0.6rem;
+  padding-left: 0.25rem;
+}
+.prose-case > ol > li::marker {
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+.prose-case > ul > li {
+  padding-left: 0;
+  border-top: 1px solid var(--color-line);
+  padding-top: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+.prose-case strong {
+  font-weight: 600;
+}
+
+/* Fade-in on scroll. Content stays visible without JS and with reduced motion. */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+html.js .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  html.js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
