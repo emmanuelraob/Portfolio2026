@@ -2,12 +2,12 @@ const stages = [
   { value: "18", name: "Interviews", note: "In-depth, with parents and tutors" },
   { value: "2", name: "Personas", note: "A parent and a tutor, plus JTBD affinity maps, journey maps and value proposition canvases" },
   { value: "2", name: "Prototype flows", note: "Parent and tutor, from wireframes to high-fidelity interactive prototypes" },
-  { value: "30", name: "Usability participants", note: "Across 2 rounds of testing" },
+  { value: "30", name: "Usability participants", note: "15 per round, across 2 rounds of testing" },
 ];
 const phases = ["Discovery", "Synthesis", "Design", "Testing"];
 
 const desc =
-  "Research process in four phases: discovery with 18 in-depth interviews with parents and tutors; synthesis into 2 personas, affinity maps, journey maps and value proposition canvases; design of parent and tutor prototype flows; and usability testing with 30 participants across 2 rounds, looping back into the prototypes.";
+  "Research process in four phases: discovery with 18 in-depth interviews with parents and tutors; synthesis into 2 personas, affinity maps, journey maps and value proposition canvases; design of parent and tutor prototype flows; and usability testing with 30 participants, 15 in each of 2 rounds, looping back into the prototypes.";
 
 export default function ResearchProcess() {
   return (

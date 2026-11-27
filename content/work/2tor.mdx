@@ -1,6 +1,8 @@
 import Figure from "../../components/Figure";
 import ResearchProcess from "../../components/diagrams/ResearchProcess";
 import ScopeChange from "../../components/diagrams/ScopeChange";
+import Personas from "../../components/diagrams/Personas";
+import JourneyMap, { lucia, carlos } from "../../components/diagrams/JourneyMap";
 
 ## Problem
 
@@ -20,6 +22,22 @@ How do parents decide whom to trust with their children's learning? What would m
 2. **Synthesis:** JTBD affinity maps, 2 personas (a parent and a tutor), journey maps and value proposition canvases with participant quotes.
 3. **Design:** wireframes, then high-fidelity interactive prototypes for the parent and tutor flows.
 4. **Testing:** usability testing with 30 participants across 2 iterations, with scripts aligned to the prototype screens.
+
+### Personas
+
+<Figure tone="bare" caption="The 2 personas from synthesis, recreated and translated from the team's Spanish originals.">
+  <Personas />
+</Figure>
+
+### Journey maps
+
+<Figure caption="Lucía, the parent: emotions, pain points and opportunities at each stage. Recreated and translated; participant quotes left out.">
+  <JourneyMap who="Lucía, the parent" stages={lucia} />
+</Figure>
+
+<Figure caption="Carlos, the tutor. Recreated and translated; participant quotes left out.">
+  <JourneyMap who="Carlos, the tutor" stages={carlos} />
+</Figure>
 
 ## Key findings
 
